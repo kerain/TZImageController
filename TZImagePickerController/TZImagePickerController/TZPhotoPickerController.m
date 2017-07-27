@@ -291,6 +291,10 @@ static CGSize AssetGridThumbnailSize;
             if (havenotShowAlert) {
                 [self didGetAllPhotos:photos assets:assets infoArr:infoArr];
             }
+            
+            if (tzImagePickerVc.selectedModels.count>0) {
+                [tzImagePickerVc.selectedModels removeObject:model];
+            }
         } progressHandler:^(double progress, NSError *error, BOOL *stop, NSDictionary *info) {
             // 如果图片正在从iCloud同步中,提醒用户
             if (progress < 1 && havenotShowAlert) {
